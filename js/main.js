@@ -88,3 +88,26 @@ if (gallery) {
     dot.addEventListener("click", () => showSlide(dotIndex));
   });
 }
+
+document
+  .querySelectorAll(
+    ".site-nav a, .site-footer__menu a, .site-footer__legal, .site-footer__contacts a"
+  )
+  .forEach((link) => {
+    const text = link.textContent;
+    if (!text || link.children.length > 0) return;
+
+    const chars = [...text];
+    link.replaceChildren();
+    link.classList.add("letter-link");
+    link.setAttribute("aria-label", text.trim());
+
+    chars.forEach((char, index) => {
+      const span = document.createElement("span");
+      span.className = "char";
+      span.style.setProperty("--i", String(index));
+      span.style.setProperty("--n", String(chars.length));
+      span.textContent = char === " " ? "\u00A0" : char;
+      link.append(span);
+    });
+  });

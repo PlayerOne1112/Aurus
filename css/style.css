@@ -6,15 +6,6 @@
   font-display: swap;
 }
 
-/* Helvetica Neue is specified in the file and could not be exported.
-   Liberation Sans is the local substitute, served from /fonts. */
-@font-face {
-  font-family: "Liberation Sans";
-  src: url("../fonts/LiberationSans-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 
 :root {
   --color-text-primary: #000207;
@@ -30,7 +21,7 @@
   --color-scrim: rgba(0, 0, 0, 0.5);
 
   --font-heading: Forum, "Times New Roman", serif;
-  --font-body: "Liberation Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Helvetica Neue", Helvetica, Inter, Arial, sans-serif;
 
   --type-hero-size: 80px;
   --type-hero-line: 1.35;
@@ -992,4 +983,93 @@ body.nav-open .nav-toggle__bars::after {
   flex-direction: column;
   color: var(--color-text-secondary);
   text-decoration: none;
+}
+
+.site-nav a.letter-link,
+.site-footer__menu a.letter-link,
+.site-footer__legal.letter-link,
+.site-footer__contacts a.letter-link {
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.letter-link::after {
+  content: none;
+}
+
+.letter-link .char {
+  position: relative;
+  display: inline-block;
+}
+
+.letter-link .char::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.28s var(--ease-out);
+  transition-delay: calc((var(--n) - var(--i) - 1) * 34ms);
+}
+
+.letter-link:hover .char::after,
+.letter-link:focus-visible .char::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+  transition-delay: calc(var(--i) * 34ms);
+}
+
+.desktop-gate {
+  display: none;
+}
+
+@media (max-width: 1199px) {
+  .desktop-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 28px;
+    background: var(--color-bg-primary);
+    text-align: center;
+  }
+
+  .desktop-gate__logo {
+    width: 164px;
+    height: auto;
+  }
+
+  .desktop-gate__title {
+    margin: 8px 0 0;
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  .desktop-gate__text {
+    max-width: 320px;
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  body {
+    overflow: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .letter-link .char::after {
+    transition: none;
+  }
 }

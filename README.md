@@ -19,4 +19,4 @@ No build step. Fonts, images, and scripts are local.
 ## Fonts
 
 - **Forum** Regular is vendored in `fonts/` (the heading face from the file).
-- **Helvetica Neue** is the body face in the file and could not be exported. The page uses **Liberation Sans**, already present on this machine, via `@font-face`.
+- **Helvetica Neue** is the body face from the file. It is not on Google Fonts. The page uses it when the system has it, and otherwise **Inter** from Google Fonts.
