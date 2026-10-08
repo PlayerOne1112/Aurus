@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AURUS — Вселенная AURUS</title>
+    <meta
+      name="description"
+      content="Единое пространство безупречного вкуса, инженерного суверенитета и абсолютного комфорта."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body id="top">
+    <header class="site-header">
+      <div class="site-header__bar">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-menu"
+        >
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+          <span class="sr-only">Меню</span>
+        </button>
+
+        <nav class="site-nav" id="site-menu" aria-label="Основное меню">
+          <ul class="site-nav__list">
+            <li><a href="#brand">Бренд</a></li>
+            <li><a href="#universe">Вселенная</a></li>
+            <li><a href="#categories">Категории</a></li>
+            <li><a href="#partners">Партнерам</a></li>
+            <li><a href="#blog">Блог</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+
+        <a class="logo" href="#top">
+          <img src="images/logo.svg" alt="AURUS" width="218" height="32" />
+        </a>
+
+        <div class="site-tools">
+          <button class="icon-button" type="button" aria-label="Поиск">
+            <img src="images/icon-search.svg" alt="" width="20" height="20" />
+          </button>
+          <button class="icon-button" type="button" aria-label="Аккаунт">
+            <img src="images/icon-user.svg" alt="" width="20" height="20" />
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__media">
+          <img
+            class="hero__photo"
+            src="images/hero.png"
+            alt="Автомобиль AURUS в тёмном выставочном зале"
+            width="1442"
+            height="736"
+          />
+          <img
+            class="hero__scrim"
+            src="images/hero-scrim.svg"
+            alt=""
+            width="1724"
+            height="867"
+          />
+        </div>
+        <div class="hero__content">
+          <h1 id="hero-title">Вселенная AURUS</h1>
+          <p>
+            Единое пространство безупречного вкуса, инженерного суверенитета<br />
+            и абсолютного комфорта, охватывающее все сферы вашей жизни.
+          </p>
+        </div>
+        <button class="volume" type="button" aria-pressed="true" aria-label="Без звука">
+          <img src="images/icon-volume-off.svg" alt="" width="19" height="17" />
+        </button>
+      </section>
+    </main>
+  </body>
+</html>
