@@ -8,7 +8,15 @@
       name="description"
       content="Кресло Albireo Chair, созданное дизайнером Anthony Guerrée: гибкая система посадки с мягкими изгибами и высокой спинкой."
     />
+    <meta name="robots" content="noindex" />
     <link rel="icon" href="favicon.ico" />
+    <script>
+      try {
+        if (localStorage.getItem("aurus-access") === "1") {
+          document.documentElement.classList.add("is-unlocked");
+        }
+      } catch (error) {}
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,6 +27,23 @@
     <script src="js/main.js" defer></script>
   </head>
   <body id="top">
+    <div class="access-gate">
+      <img class="access-gate__logo" src="images/logo.svg" alt="AURUS" width="218" height="32" />
+      <p class="access-gate__title">Закрытый просмотр</p>
+      <p class="access-gate__text">Введите пароль, чтобы открыть страницу.</p>
+      <form class="access-gate__form" id="access-form">
+        <label class="sr-only" for="access-password">Пароль</label>
+        <input
+          id="access-password"
+          type="password"
+          name="password"
+          autocomplete="current-password"
+          required
+        />
+        <button type="submit">Войти</button>
+        <p class="access-gate__error" hidden>Неверный пароль</p>
+      </form>
+    </div>
     <div class="desktop-gate">
       <img class="desktop-gate__logo" src="images/logo.svg" alt="AURUS" width="218" height="32" />
       <p class="desktop-gate__title">Только с компьютера</p>

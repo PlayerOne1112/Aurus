@@ -111,3 +111,45 @@ document
       link.append(span);
     });
   });
+
+const accessForm = document.querySelector("#access-form");
+const accessPassword = document.querySelector("#access-password");
+const accessError = document.querySelector(".access-gate__error");
+const passwordHash = "03b0e87b8ce1ee26a26b861c84e048276d687eb61e599b8180ea4b4bc8a6ef98";
+
+function setSiteLocked(locked) {
+  document.documentElement.classList.toggle("is-unlocked", !locked);
+  document.querySelectorAll("header, main, footer").forEach((element) => {
+    if (locked) element.setAttribute("inert", "");
+    else element.removeAttribute("inert");
+  });
+}
+
+async function passwordDigest(value) {
+  const data = new TextEncoder().encode(value);
+  const buffer = await crypto.subtle.digest("SHA-256", data);
+  return [...new Uint8Array(buffer)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+}
+
+if (accessForm) {
+  const unlocked = document.documentElement.classList.contains("is-unlocked");
+  setSiteLocked(!unlocked);
+  if (!unlocked) accessPassword.focus();
+
+  accessForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const digest = await passwordDigest(accessPassword.value);
+    if (digest !== passwordHash) {
+      accessError.hidden = false;
+      accessPassword.focus();
+      return;
+    }
+
+    try {
+      localStorage.setItem("aurus-access", "1");
+    } catch (error) {}
+    accessError.hidden = true;
+    accessPassword.value = "";
+    setSiteLocked(false);
+  });
+}
