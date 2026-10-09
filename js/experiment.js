@@ -42,9 +42,15 @@ function watchReveals() {
     ".product-hero__content, .section-head, .feature__copy, .product-card, .site-footer"
   )];
   const reveal = (node) => node.classList.add("is-in");
+  const cardInView = (node) => {
+    const rect = node.getBoundingClientRect();
+    const view = window.innerHeight || 1;
+    return rect.bottom > 80 && rect.top < view - 48;
+  };
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
+        if (entry.target.classList.contains("product-card")) return;
         if (!entry.isIntersecting) return;
         reveal(entry.target);
         observer.unobserve(entry.target);
@@ -55,6 +61,10 @@ function watchReveals() {
 
   const sync = () => {
     nodes.forEach((node) => {
+      if (node.classList.contains("product-card")) {
+        node.classList.toggle("is-in", cardInView(node));
+        return;
+      }
       if (node.classList.contains("is-in")) return;
       const rect = node.getBoundingClientRect();
       if (rect.bottom < 64 || visibleAmount(node) > 32) {
@@ -66,7 +76,7 @@ function watchReveals() {
 
   sync();
   nodes.forEach((node) => {
-    if (!node.classList.contains("is-in")) observer.observe(node);
+    if (!node.classList.contains("product-card") && !node.classList.contains("is-in")) observer.observe(node);
   });
   return sync;
 }
@@ -147,6 +157,12 @@ function startMotion() {
     updateMedia(groups);
     updateVideo();
     syncReveals();
+    const clip = document.querySelector(".scene video");
+    const source = clip && clip.dataset.src;
+    if (clip && source && !clip.getAttribute("src") && clip.getBoundingClientRect().top < (window.innerHeight || 1) * 1.35) {
+      clip.src = source;
+      clip.play().catch(() => {});
+    }
   };
   render();
 

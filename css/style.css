@@ -270,6 +270,7 @@ body.nav-open .nav-toggle__bars::after {
 .site-nav a::after,
 .site-footer__menu a::after,
 .site-footer__legal::after,
+.site-footer__switch::after,
 .site-footer__contacts a::after,
 .access-gate__form button::after {
   content: "";
@@ -281,12 +282,16 @@ body.nav-open .nav-toggle__bars::after {
   transition: transform 0.85s var(--ease-out);
 }
 
+.site-nav a.is-current::after,
+.site-footer__menu a.is-current::after,
 .site-nav a:hover::after,
 .site-nav a:focus-visible::after,
 .site-footer__menu a:hover::after,
 .site-footer__menu a:focus-visible::after,
 .site-footer__legal:hover::after,
 .site-footer__legal:focus-visible::after,
+.site-footer__switch:hover::after,
+.site-footer__switch:focus-visible::after,
 .site-footer__contacts a:hover::after,
 .site-footer__contacts a:focus-visible::after,
 .access-gate__form button:hover::after,
@@ -599,13 +604,31 @@ body.nav-open .nav-toggle__bars::after {
 
 .lead {
   padding-top: 200px;
-  padding-bottom: 200px;
+  padding-bottom: 80px;
 }
 
 .scene,
 .gallery {
   padding-top: 80px;
   padding-bottom: 80px;
+}
+
+.gallery-offer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.gallery-offer .section-head > p {
+  width: max-content;
+  max-width: 100%;
+}
+
+.gallery-offer .gallery__frame {
+  align-self: stretch;
 }
 
 .shelf {
@@ -1011,7 +1034,7 @@ video.media-frame__photo {
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: start;
   min-height: 176px;
-  padding-top: 28px;
+  padding-top: 40px;
   padding-bottom: 28px;
 }
 
@@ -1035,7 +1058,8 @@ video.media-frame__photo {
 }
 
 .site-footer__menu a,
-.site-footer__legal {
+.site-footer__legal,
+.site-footer__switch {
   color: var(--color-text-primary);
   font-size: var(--type-nav-size);
   line-height: var(--type-nav-line);
@@ -1047,7 +1071,8 @@ video.media-frame__photo {
   flex-direction: column;
 }
 
-.site-footer__legal {
+.site-footer__legal,
+.site-footer__switch {
   display: inline-flex;
   flex-direction: column;
 }
@@ -1240,6 +1265,7 @@ html:not(.is-unlocked) body {
   .site-nav a::after,
   .site-footer__menu a::after,
   .site-footer__legal::after,
+  .site-footer__switch::after,
   .site-footer__contacts a::after,
   .access-gate__form button::after,
   .text-link__icon,

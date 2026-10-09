@@ -160,8 +160,22 @@ function collapseFrame(frame) {
 }
 
 document.querySelectorAll(".media-frame video").forEach((video) => {
+  const source = video.dataset.src || video.getAttribute("src");
   video.muted = true;
-  video.play().catch(() => {});
+  video.preload = "none";
+  if (!video.dataset.src && source) video.dataset.src = source;
+  video.removeAttribute("src");
+  const start = () => {
+    const rect = video.getBoundingClientRect();
+    if (rect.top > (window.innerHeight || 1) * 1.35) return;
+    if (source && video.getAttribute("src") !== source) video.src = source;
+    video.play().catch(() => {});
+    window.removeEventListener("scroll", start);
+    window.removeEventListener("resize", start);
+  };
+  start();
+  window.addEventListener("scroll", start, { passive: true });
+  window.addEventListener("resize", start);
 });
 
 document.querySelectorAll(".volume").forEach((volume) => {

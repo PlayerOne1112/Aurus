@@ -13,6 +13,7 @@ html.is-motion .site-header {
 html.is-motion .site-nav a::after,
 html.is-motion .site-footer__menu a::after,
 html.is-motion .site-footer__legal::after,
+html.is-motion .site-footer__switch::after,
 html.is-motion .site-footer__contacts a::after {
   transform-origin: left center;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
@@ -147,6 +148,13 @@ html.is-motion .cat-menu__link {
   flex-direction: row;
   align-items: center;
   gap: 4px;
+}
+
+html.is-motion .cat-menu__link.is-current .cat-menu__label {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% 1px;
 }
 
 html.is-motion .cat-menu__arrow {

@@ -67,28 +67,10 @@
             <li><a href="#brand">Бренд</a></li>
             <li><a href="#universe">Вселенная</a></li>
             <li class="site-nav__item site-nav__item--categories">
-              <a href="#categories" aria-expanded="false" aria-controls="categories-menu">Категории</a>
+              <a class="is-current" href="#categories" aria-current="page" aria-expanded="false" aria-controls="categories-menu">Категории</a>
               <div class="page-scrim" aria-hidden="true"></div>
               <div class="cat-menu" id="categories-menu">
                 <div class="cat-menu__nav">
-                  <div class="cat-menu__group">
-                    <p class="cat-menu__title">Стиль жизни</p>
-                    <ul class="cat-menu__list">
-                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Часы</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
-                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Одежда</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
-                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Вода</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
-                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Фарфор</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
-                    </ul>
-                  </div>
-                  <div class="cat-menu__group">
-                    <p class="cat-menu__title">Среда жизни</p>
-                    <ul class="cat-menu__list">
-                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Девелопмент</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
-                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Климатическая техника</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
-                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Мебель</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
-                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Лифты</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
-                    </ul>
-                  </div>
                   <div class="cat-menu__group">
                     <p class="cat-menu__title">Автомобили</p>
                     <ul class="cat-menu__list">
@@ -101,6 +83,24 @@
                     </ul>
                   </div>
                   <div class="cat-menu__group">
+                    <p class="cat-menu__title">Среда жизни</p>
+                    <ul class="cat-menu__list">
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Девелопмент</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Климатическая техника</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link is-current" href="#categories" aria-current="page"><span class="cat-menu__label">Мебель</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Лифты</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                    </ul>
+                  </div>
+                  <div class="cat-menu__group">
+                    <p class="cat-menu__title">Стиль жизни</p>
+                    <ul class="cat-menu__list">
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Часы</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Одежда</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Вода</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Фарфор</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                    </ul>
+                  </div>
+                  <div class="cat-menu__group">
                     <p class="cat-menu__title">Вертолет</p>
                     <ul class="cat-menu__list">
                       <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Ansat</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
@@ -109,10 +109,10 @@
                 </div>
                 <div class="cat-menu__media">
                   <a class="cat-menu__photo" href="#categories">
-                    <img src="images/menu-senat.png" alt="Автомобиль AURUS Senat" width="425" height="272" />
+                    <img src="images/menu-senat.webp" alt="Автомобиль AURUS Senat" width="425" height="272" loading="lazy" decoding="async" />
                   </a>
                   <a class="cat-menu__photo" href="#categories">
-                    <img src="images/menu-ansat.png" alt="Вертолет AURUS Ansat" width="425" height="272" />
+                    <img src="images/menu-ansat.webp" alt="Вертолет AURUS Ansat" width="425" height="272" loading="lazy" decoding="async" />
                   </a>
                 </div>
               </div>
@@ -143,11 +143,11 @@
       <section class="product-hero" aria-labelledby="hero-title">
         <img
           class="product-hero__photo"
-          src="images/albireo-hero.png"
+          src="images/albireo-hero.webp"
           alt="Кресло Albireo в каменном интерьере"
           width="3000"
           height="1700"
-        />
+        fetchpriority="high" decoding="async" />
         <img
           class="product-hero__scrim"
           src="images/albireo-scrim.svg"
@@ -179,14 +179,14 @@
         <div class="media-frame">
           <video
             class="media-frame__photo"
-            src="images/handmade__sela_chair%20(720p).mp4"
-            poster="images/albireo-scene.png"
+            data-src="images/handmade__sela_chair%20(720p).mp4"
+            poster="images/albireo-scene.webp"
             width="1920"
             height="1277"
-            autoplay
             muted
             loop
             playsinline
+            preload="none"
             aria-label="Гостиная с диваном и креслом Albireo"
           ></video>
           <button
@@ -218,11 +218,11 @@
       <section class="bleed" aria-label="Кресла у окна">
         <img
           class="bleed__photo"
-          src="images/albireo-window.png"
+          src="images/albireo-window.webp"
           alt="Два кресла Albireo у панорамного окна"
           width="1920"
           height="1088"
-        />
+        loading="lazy" decoding="async" />
       </section>
 
       <section class="band shelf" aria-labelledby="hearth-title">
@@ -238,11 +238,11 @@
             <article class="product-card">
               <div class="product-card__media">
                 <img
-                  src="images/chair-aurea.png"
+                  src="images/chair-aurea.webp"
                   alt="Кресло ALBIREO Aurea с меховой обивкой"
                   width="1800"
                   height="1201"
-                />
+                loading="lazy" decoding="async" />
               </div>
               <div class="product-card__copy">
                 <h3 class="product-card__title">ALBIREO Aurea<span class="product-card__arrow" aria-hidden="true"></span></h3>
@@ -254,11 +254,11 @@
             <article class="product-card">
               <div class="product-card__media">
                 <img
-                  src="images/chair-stella.png"
+                  src="images/chair-stella.webp"
                   alt="Кресло ALBIREO Stella с кожаным сиденьем"
                   width="1800"
                   height="1201"
-                />
+                loading="lazy" decoding="async" />
               </div>
               <div class="product-card__copy">
                 <h3 class="product-card__title">ALBIREO Stella<span class="product-card__arrow" aria-hidden="true"></span></h3>
@@ -270,11 +270,11 @@
             <article class="product-card">
               <div class="product-card__media">
                 <img
-                  src="images/chair-lumen.png"
+                  src="images/chair-lumen.webp"
                   alt="Кресло ALBIREO Lumen с плетёной спинкой"
                   width="1800"
                   height="1201"
-                />
+                loading="lazy" decoding="async" />
               </div>
               <div class="product-card__copy">
                 <h3 class="product-card__title">ALBIREO Lumen<span class="product-card__arrow" aria-hidden="true"></span></h3>
@@ -286,11 +286,11 @@
             <article class="product-card product-card--cutout">
               <div class="product-card__media">
                 <img
-                  src="images/chair-tame.png"
+                  src="images/chair-tame.webp"
                   alt="Кресло ALBIREO Tame с серой обивкой"
                   width="1800"
                   height="1201"
-                />
+                loading="lazy" decoding="async" />
               </div>
               <div class="product-card__copy">
                 <h3 class="product-card__title">ALBIREO Tame<span class="product-card__arrow" aria-hidden="true"></span></h3>
@@ -304,11 +304,11 @@
       <section class="band feature" id="feature" aria-labelledby="craft-title">
         <img
           class="feature__photo"
-          src="images/feature-craft.png"
+          src="images/feature-craft.webp"
           alt="Обеденный стол ручной работы у окна"
           width="1500"
           height="2100"
-        />
+        loading="lazy" decoding="async" />
         <div class="feature__copy">
           <h2 id="craft-title">Изготовлено вручную</h2>
           <p>
@@ -334,28 +334,28 @@
             alt="Деревянный каркас, меховая обивка и кожаный ремень кресла Albireo"
             width="1920"
             height="1280"
-          />
+          loading="lazy" decoding="async" />
           <img
             class="gallery__photo"
             src="images/aliberio_item_2.webp"
             alt="Спальня с кроватью и диваном Albireo у каменной стены"
             width="1920"
             height="1277"
-          />
+          loading="lazy" decoding="async" />
           <img
             class="gallery__photo"
             src="images/aliberio_item_3.webp"
             alt="Диван Albireo у каменной стены и деревянной ширмы"
             width="1920"
             height="1277"
-          />
+          loading="lazy" decoding="async" />
           <img
             class="gallery__photo"
             src="images/aliberio_item_4.webp"
             alt="Банкетка и пуф Albireo у каменной стены"
             width="1920"
             height="1277"
-          />
+          loading="lazy" decoding="async" />
           <div class="gallery__dots">
             <button
               class="gallery__dot is-active"
@@ -389,11 +389,11 @@
             <article class="product-card product-card--car product-card--faded">
               <div class="product-card__media">
                 <img
-                  src="images/universe-car.png"
+                  src="images/universe-car.webp"
                   alt="Автомобиль AURUS"
                   width="1264"
                   height="730"
-                />
+                loading="lazy" decoding="async" />
               </div>
               <div class="product-card__copy">
                 <h3 class="product-card__title">Автомобили<span class="product-card__arrow" aria-hidden="true"></span></h3>
@@ -405,11 +405,11 @@
             <article class="product-card product-card--fill product-card--soft product-card--faded">
               <div class="product-card__media">
                 <img
-                  src="images/universe-heli.png"
+                  src="images/universe-heli.webp"
                   alt="Вертолёт AURUS"
                   width="1275"
                   height="816"
-                />
+                loading="lazy" decoding="async" />
               </div>
               <div class="product-card__copy">
                 <h3 class="product-card__title">Вертолет<span class="product-card__arrow" aria-hidden="true"></span></h3>
@@ -421,11 +421,11 @@
             <article class="product-card product-card--ring product-card--soft product-card--faded">
               <div class="product-card__media">
                 <img
-                  src="images/universe-ring.png"
+                  src="images/universe-ring.webp"
                   alt="Кольцо из коллекции стиля жизни"
                   width="1264"
                   height="730"
-                />
+                loading="lazy" decoding="async" />
               </div>
               <div class="product-card__copy">
                 <h3 class="product-card__title">Стиль жизни<span class="product-card__arrow" aria-hidden="true"></span></h3>
@@ -437,11 +437,11 @@
             <article class="product-card product-card--faded">
               <div class="product-card__media">
                 <img
-                  src="images/universe-living.png"
+                  src="images/universe-living.webp"
                   alt="Кресло из коллекции среды жизни"
                   width="1800"
                   height="1201"
-                />
+                loading="lazy" decoding="async" />
               </div>
               <div class="product-card__copy">
                 <h3 class="product-card__title">Среда жизни<span class="product-card__arrow" aria-hidden="true"></span></h3>
@@ -470,11 +470,11 @@
       <section class="hall" aria-label="Зал AURUS">
         <img
           class="hall__photo"
-          src="images/footer-hall.png"
+          src="images/footer-hall.webp"
           alt="Банкетный зал с винной стеной"
           width="1934"
           height="544"
-        />
+        loading="lazy" decoding="async" />
       </section>
     </main>
 
@@ -483,13 +483,14 @@
         <nav class="site-footer__menu" aria-label="Меню в подвале">
           <a href="#brand">Бренд</a>
           <a href="#universe">Вселенная</a>
-          <a href="#categories">Категории</a>
+          <a class="is-current" href="#categories" aria-current="page">Категории</a>
           <a href="#partners">Партнерам</a>
           <a href="#blog">Блог</a>
           <a href="#contacts">Контакты</a>
         </nav>
         <a class="site-footer__legal" href="#footer">Политика конфиденциальности</a>
         <p class="site-footer__copy">@ 2026 AURUS. Все права защищены</p>
+        <a class="site-footer__switch" href="offers.html#offers">Альтернативный лейаут</a>
       </div>
 
       <a class="site-footer__mark" href="./">
