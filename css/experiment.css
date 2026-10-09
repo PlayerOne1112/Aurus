@@ -115,6 +115,14 @@ html.is-motion .cat-menu__nav {
   margin-top: 4px;
 }
 
+html.is-motion .cat-menu__group:nth-child(2) {
+  margin-left: -8px;
+}
+
+html.is-motion .cat-menu__group:nth-child(3) {
+  margin-left: -4px;
+}
+
 html.is-motion .cat-menu__group {
   display: flex;
   flex-direction: column;
