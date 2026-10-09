@@ -30,7 +30,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir -p _site
-          cp -a index.html product.html favicon.ico css js images fonts _site/
+          cp -a index.html experiment.html product.html favicon.ico css js images fonts _site/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

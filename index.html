@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ALBIREO CHAIR SYSTEM — AURUS</title>
+    <title>ADV x AURUS Concept</title>
     <meta
       name="description"
       content="Кресло Albireo Chair, созданное дизайнером Anthony Guerrée: гибкая система посадки с мягкими изгибами и высокой спинкой."
@@ -16,15 +16,14 @@
           document.documentElement.classList.add("is-unlocked");
         }
       } catch (error) {}
+      document.documentElement.classList.add("is-motion");
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/vendor/lenis.css" />
+    <link rel="stylesheet" href="css/experiment.css" />
+    <script src="js/vendor/lenis.min.js" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/experiment.js" defer></script>
   </head>
   <body id="top">
     <div class="access-gate">
@@ -46,9 +45,9 @@
     </div>
     <div class="desktop-gate">
       <img class="desktop-gate__logo" src="images/logo.svg" alt="AURUS" width="218" height="32" />
-      <p class="desktop-gate__title">Только с компьютера</p>
       <p class="desktop-gate__text">
-        Страница доступна только с десктопа для наилучшего опыта.
+        Используйте компьютер или ноутбук<br />
+        для наилучшего опыта
       </p>
     </div>
     <header class="site-header">
@@ -65,12 +64,63 @@
 
         <nav class="site-nav" id="site-menu" aria-label="Основное меню">
           <ul class="site-nav__list">
-            <li><a href="./#brand">Бренд</a></li>
-            <li><a href="./#universe">Вселенная</a></li>
-            <li><a href="./#categories">Категории</a></li>
-            <li><a href="./#partners">Партнерам</a></li>
-            <li><a href="./#blog">Блог</a></li>
-            <li><a href="./#contacts">Контакты</a></li>
+            <li><a href="#brand">Бренд</a></li>
+            <li><a href="#universe">Вселенная</a></li>
+            <li class="site-nav__item site-nav__item--categories">
+              <a href="#categories" aria-expanded="false" aria-controls="categories-menu">Категории</a>
+              <div class="page-scrim" aria-hidden="true"></div>
+              <div class="cat-menu" id="categories-menu">
+                <div class="cat-menu__nav">
+                  <div class="cat-menu__group">
+                    <p class="cat-menu__title">Стиль жизни</p>
+                    <ul class="cat-menu__list">
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Часы</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Одежда</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Вода</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Фарфор</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                    </ul>
+                  </div>
+                  <div class="cat-menu__group">
+                    <p class="cat-menu__title">Среда жизни</p>
+                    <ul class="cat-menu__list">
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Девелопмент</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Климатическая техника</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Мебель</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Лифты</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                    </ul>
+                  </div>
+                  <div class="cat-menu__group">
+                    <p class="cat-menu__title">Автомобили</p>
+                    <ul class="cat-menu__list">
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Обновленный Senat</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Senat Limousine</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Senat Long</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Senat</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Komendant</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Бронированные модели</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                    </ul>
+                  </div>
+                  <div class="cat-menu__group">
+                    <p class="cat-menu__title">Вертолет</p>
+                    <ul class="cat-menu__list">
+                      <li><a class="cat-menu__link" href="#categories"><span class="cat-menu__label">Ansat</span><span class="cat-menu__arrow" aria-hidden="true"></span></a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="cat-menu__media">
+                  <a class="cat-menu__photo" href="#categories">
+                    <img src="images/menu-senat.png" alt="Автомобиль AURUS Senat" width="425" height="272" />
+                  </a>
+                  <a class="cat-menu__photo" href="#categories">
+                    <img src="images/menu-ansat.png" alt="Вертолет AURUS Ansat" width="425" height="272" />
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li><a href="#boutique">Бутик</a></li>
+            <li><a href="#partners">Партнерам</a></li>
+            <li><a href="#blog">Блог</a></li>
+            <li><a href="#contacts">Контакты</a></li>
           </ul>
         </nav>
 
@@ -127,20 +177,28 @@
 
       <section class="band scene" aria-label="Гостиная Albireo">
         <div class="media-frame">
-          <img
+          <video
             class="media-frame__photo"
-            src="images/albireo-scene.png"
-            alt="Гостиная с диваном и креслом Albireo"
+            src="images/handmade__sela_chair%20(720p).mp4"
+            poster="images/albireo-scene.png"
             width="1920"
             height="1277"
-          />
+            autoplay
+            muted
+            loop
+            playsinline
+            aria-label="Гостиная с диваном и креслом Albireo"
+          ></video>
           <button
             class="volume media-frame__mute"
             type="button"
             aria-pressed="true"
             aria-label="Без звука"
           >
-            <img src="images/icon-volume-off.svg" alt="" width="19" height="17" />
+            <span class="control-icon">
+              <img class="control-icon__off" src="images/volume-off.svg" alt="" width="20" height="20" />
+              <img class="control-icon__on" src="images/volume-up.svg" alt="" width="20" height="20" />
+            </span>
           </button>
           <button
             class="round-button media-frame__expand"
@@ -149,7 +207,10 @@
             aria-pressed="false"
             aria-label="На весь экран"
           >
-            <img src="images/icon-expand.svg" alt="" width="20" height="20" />
+            <span class="control-icon">
+              <img class="control-icon__off" src="images/arrow-expand.svg" alt="" width="20" height="20" />
+              <img class="control-icon__on" src="images/arrow-shrink.svg" alt="" width="20" height="20" />
+            </span>
           </button>
         </div>
       </section>
@@ -184,7 +245,7 @@
                 />
               </div>
               <div class="product-card__copy">
-                <h3 class="product-card__title">ALBIREO Aurea</h3>
+                <h3 class="product-card__title">ALBIREO Aurea<span class="product-card__arrow" aria-hidden="true"></span></h3>
                 <p>Кресло</p>
               </div>
             </article>
@@ -200,7 +261,7 @@
                 />
               </div>
               <div class="product-card__copy">
-                <h3 class="product-card__title">ALBIREO Stella</h3>
+                <h3 class="product-card__title">ALBIREO Stella<span class="product-card__arrow" aria-hidden="true"></span></h3>
                 <p>Кресло</p>
               </div>
             </article>
@@ -216,7 +277,7 @@
                 />
               </div>
               <div class="product-card__copy">
-                <h3 class="product-card__title">ALBIREO Lumen</h3>
+                <h3 class="product-card__title">ALBIREO Lumen<span class="product-card__arrow" aria-hidden="true"></span></h3>
                 <p>Кресло</p>
               </div>
             </article>
@@ -232,7 +293,7 @@
                 />
               </div>
               <div class="product-card__copy">
-                <h3 class="product-card__title">ALBIREO Tame</h3>
+                <h3 class="product-card__title">ALBIREO Tame<span class="product-card__arrow" aria-hidden="true"></span></h3>
                 <p>Кресло</p>
               </div>
             </article>
@@ -268,11 +329,32 @@
       <section class="band gallery" aria-label="Детали кресла" data-gallery>
         <div class="gallery__frame">
           <img
-            class="gallery__photo"
-            src="images/albireo-detail.png"
-            alt="Деревянный каркас и меховая обивка кресла Albireo"
+            class="gallery__photo is-active"
+            src="images/aliberio_item_1.webp"
+            alt="Деревянный каркас, меховая обивка и кожаный ремень кресла Albireo"
             width="1920"
             height="1280"
+          />
+          <img
+            class="gallery__photo"
+            src="images/aliberio_item_2.webp"
+            alt="Спальня с кроватью и диваном Albireo у каменной стены"
+            width="1920"
+            height="1277"
+          />
+          <img
+            class="gallery__photo"
+            src="images/aliberio_item_3.webp"
+            alt="Диван Albireo у каменной стены и деревянной ширмы"
+            width="1920"
+            height="1277"
+          />
+          <img
+            class="gallery__photo"
+            src="images/aliberio_item_4.webp"
+            alt="Банкетка и пуф Albireo у каменной стены"
+            width="1920"
+            height="1277"
           />
           <div class="gallery__dots">
             <button
@@ -286,10 +368,11 @@
             <button class="gallery__dot" type="button" data-dot aria-label="Слайд 3"></button>
             <button class="gallery__dot" type="button" data-dot aria-label="Слайд 4"></button>
           </div>
-          <button class="round-button gallery__next" type="button" data-next aria-label="Следующий слайд">
-            <span class="round-button__glyph">
-              <img src="images/icon-arrow-right.svg" alt="" width="24" height="24" />
-            </span>
+          <button class="round-button gallery__nav gallery__nav--prev is-hidden" type="button" data-prev aria-label="Предыдущий слайд" aria-hidden="true" disabled>
+            <img src="images/left-arrow.svg" alt="" width="20" height="20" />
+          </button>
+          <button class="round-button gallery__nav gallery__nav--next" type="button" data-next aria-label="Следующий слайд">
+            <img src="images/right-arrow.svg" alt="" width="20" height="20" />
           </button>
         </div>
       </section>
@@ -313,7 +396,7 @@
                 />
               </div>
               <div class="product-card__copy">
-                <h3 class="product-card__title">Автомобили</h3>
+                <h3 class="product-card__title">Автомобили<span class="product-card__arrow" aria-hidden="true"></span></h3>
                 <p>Мощь и роскошь</p>
               </div>
             </article>
@@ -329,7 +412,7 @@
                 />
               </div>
               <div class="product-card__copy">
-                <h3 class="product-card__title">Вертолет</h3>
+                <h3 class="product-card__title">Вертолет<span class="product-card__arrow" aria-hidden="true"></span></h3>
                 <p>Искусство полета</p>
               </div>
             </article>
@@ -345,7 +428,7 @@
                 />
               </div>
               <div class="product-card__copy">
-                <h3 class="product-card__title">Стиль жизни</h3>
+                <h3 class="product-card__title">Стиль жизни<span class="product-card__arrow" aria-hidden="true"></span></h3>
                 <p>Безупречный акцент</p>
               </div>
             </article>
@@ -361,7 +444,7 @@
                 />
               </div>
               <div class="product-card__copy">
-                <h3 class="product-card__title">Среда жизни</h3>
+                <h3 class="product-card__title">Среда жизни<span class="product-card__arrow" aria-hidden="true"></span></h3>
                 <p>Пространство статуса</p>
               </div>
             </article>
@@ -398,12 +481,12 @@
     <footer class="band site-footer" id="footer">
       <div class="site-footer__brand">
         <nav class="site-footer__menu" aria-label="Меню в подвале">
-          <a href="./#brand">Бренд</a>
-          <a href="./#universe">Вселенная</a>
-          <a href="./#categories">Категории</a>
-          <a href="./#partners">Партнерам</a>
-          <a href="./#blog">Блог</a>
-          <a href="./#contacts">Контакты</a>
+          <a href="#brand">Бренд</a>
+          <a href="#universe">Вселенная</a>
+          <a href="#categories">Категории</a>
+          <a href="#partners">Партнерам</a>
+          <a href="#blog">Блог</a>
+          <a href="#contacts">Контакты</a>
         </nav>
         <a class="site-footer__legal" href="#footer">Политика конфиденциальности</a>
         <p class="site-footer__copy">@ 2026 AURUS. Все права защищены</p>
